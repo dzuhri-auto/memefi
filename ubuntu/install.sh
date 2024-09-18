@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Specify the Python version you want to install
-PYTHON_VERSION="3.10.14"
+PYTHON_VERSION="3.10.12"
 
 # Check if Python is installed and get the version
 if command -v python3 &>/dev/null; then
