@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     MAX_CHARGE_LEVEL: int = 3
 
     APPLY_DAILY_ENERGY: bool = True
-    APPLY_DAILY_TURBO: bool = True
+    APPLY_DAILY_TURBO: bool = False
 
     RANDOM_TAPS_COUNT: list[int] = [15, 75]
     SLEEP_BETWEEN_TAP: list[int] = [30, 60]
