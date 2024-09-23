@@ -2,7 +2,7 @@
 
 Memefi Telegram Mini App Bot Auto
 
-For README in Bahasa Indonesia: [![en](https://img.shields.io/badge/README-id-red.svg)](https://github.com/dzuhri-auto/memefi/blob/master/README.id.md)
+For README in English: [![en](https://img.shields.io/badge/README-en-red.svg)](https://github.com/dzuhri-auto/memefi/blob/master/README.md)
 
 ## Feature
 
@@ -36,37 +36,39 @@ For README in Bahasa Indonesia: [![en](https://img.shields.io/badge/README-id-re
 | USE_TAP_BOT          | Auto use bot tap (if already buy)       | True     |
 | EMERGENCY_STOP       | Emergency stop                          | False    |
 
-## Prerequisites
+## Persiapan
 
-Make sure you already install:
+Pastikan kamu sudah menginstal:
 
-- [Python](https://www.python.org/downloads/release/python-31012/) **version 3.10**
+- [Python](https://www.python.org/downloads/release/python-31014/) **versi 3.10**
 
-## Obtain Query ID
+## Cara Mendapatkan Query ID
 
 <https://irhamdz.notion.site/Tutorial-Get-Query-ID-f415621d4a9843d2a7a9ad2cfb9abeb4?pvs=74>
 
-## Request API KEY
 
-This script use custom API KEY, The API KEY itself is for rent only
 
-you can chat me, [Irham](https://t.me/irhamdz) to ask how much the rent price !
+## Mendapatkan API KEY
+
+Script ini menggunakan kustom API KEY, API KEY nya hanya tersedia untuk disewa.
+
+Kamu bisa chat saya, [Irham](https://t.me/irhamdz) untuk menanyakan harga sewanya!
 
 ## Install
 
-Clone to your PC / VPS:
+Clone ke PC / VPS kamu:
 
 ```shell
-git clone https://github.com/dzuhri-auto/memefi.git
+git clone https://github.com/dzuhri-auto/depin-alliance.git
 ```
 
-Go inside to the folder:
+Masuk ke folder:
 
 ```shell
-cd memefi
+cd depin-alliance
 ```
 
-Then use this command for automatic install:
+Kemudian gunakan perintah ini untuk instal otomatis:
 
 **Windows** :
 
@@ -84,11 +86,11 @@ sudo chmod +x ubuntu/install.sh ubuntu/run.sh
 source ./ubuntu/install.sh
 ```
 
-***note : dont forget to edit file `.env`***
+***note : Jangan lupa untuk mengedit file `.env`***
 
 ## Update API KEY
 
-After install we can update using API KEY:
+Setelah instalasi, kita bisa memperbarui menggunakan API KEY:
 
 **Windows** :
 
@@ -105,13 +107,13 @@ $replacement = 'API_KEY="YOUR API KEY"'
 ```shell
 sed -i~ '/^API_KEY=/s/=.*/="YOUR API KEY"/' .env
 
-# example if your API KEY = "aisjiqiqssq"
+# contoh jika API KEY kamu = "aisjiqiqssq"
 # sed -i~ '/^API_KEY=/s/=.*/="aisjiqiqssq"/' .env
 ```
 
-## Start Bot
+## Menjalankan Bot
 
-For run the bot:
+Untuk menjalankan bot:
 
 **Windows** :
 

@@ -20,21 +20,19 @@ else
 
     # Install dependencies
     sudo apt-get update
-    sudo apt-get install -y build-essential libssl-dev zlib1g-dev \
-    libncurses5-dev libsqlite3-dev libreadline-dev libbz2-dev \
-    libffi-dev liblzma-dev libgdbm-dev libnss3-dev libgdbm-compat-dev \
-    libsqlite3-dev wget
+    sudo apt install software-properties-common -y
 
-    # Download and extract Python source
-    cd /tmp
-    wget https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tgz
-    tar -xf Python-$PYTHON_VERSION.tgz
-    cd Python-$PYTHON_VERSION
+    # Add custom apt repository
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt-get update
 
-    # Configure and install
-    ./configure --enable-optimizations
-    make -j $(nproc)
-    sudo make altinstall
+    # Install python 3.10
+    sudo apt install python3.10 python3.10-venv python3.10-dev
+
+    # Make symbolic link
+    ls -la /usr/bin/python3
+    sudo rm /usr/bin/python3
+    sudo ln -s python3.10 /usr/bin/python3
 
     # Verify the installation
     if python3.10 --version &>/dev/null; then
