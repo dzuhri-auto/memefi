@@ -6,7 +6,7 @@ git pull
 git stash pop
 
 echo Done update bot..
-echo Starting bot..
+echo Starting bot, please wait..
 
 python3 main.py
 pause

@@ -1,3 +1,4 @@
+import bisect
 import json
 from datetime import datetime, timedelta, timezone
 from urllib.parse import unquote
@@ -50,8 +51,12 @@ def mapping_role_color(role):
 
 def decode_query_id(query_id):
     query_string = query_id
-    if 'tgWebAppData' in query_id:
-        query_string = unquote(string=query_id.split("tgWebAppData=", maxsplit=1)[1].split("&tgWebAppVersion", maxsplit=1)[0])
+    if "tgWebAppData" in query_id:
+        query_string = unquote(
+            string=query_id.split("tgWebAppData=", maxsplit=1)[1].split(
+                "&tgWebAppVersion", maxsplit=1
+            )[0]
+        )
     parameters = query_string.split("&")
     decoded_pairs = [(param.split("=")[0], unquote(param.split("=")[1])) for param in parameters]
     result = dict()
@@ -127,3 +132,10 @@ def populate_not_claimed_tasks(tasks: list):
                 }
                 not_claimed_tasks.append(temp_task)
     return not_claimed_tasks
+
+
+def calculate_spin_multiplier(spins):
+    variables = [1, 2, 3, 5, 10, 50, 150, 1000]
+    idx = bisect.bisect_right(variables, spins) - 1
+
+    return variables[idx] if idx >= 0 else 1

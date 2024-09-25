@@ -5,6 +5,6 @@ git pull
 git stash pop
 
 echo "Finish update"
-
-echo "Starting bot.."
+echo ""
+echo "Starting bot, please wait.."
 python3 main.py
