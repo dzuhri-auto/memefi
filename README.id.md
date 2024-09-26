@@ -12,6 +12,7 @@ For README in English: [![en](https://img.shields.io/badge/README-en-red.svg)](h
 - Auto Upgrade Boost
 - Auto Play Slot Machine
 - Auto Use Bot Tap
+- Auto Clear missions 🔥🔥🔥
 
 ## .env Settings
 
@@ -35,6 +36,7 @@ For README in English: [![en](https://img.shields.io/badge/README-en-red.svg)](h
 | USE_PROXY_FROM_FILE  | For using proxy                         | False    |
 | USE_TAP_BOT          | Auto use bot tap (if already buy)       | True     |
 | EMERGENCY_STOP       | Emergency stop                          | False    |
+| AUTO_CLEAR_MISSION   | Auto clear mission                      | True     |
 
 ## Persiapan
 
@@ -45,8 +47,6 @@ Pastikan kamu sudah menginstal:
 ## Cara Mendapatkan Query ID
 
 <https://irhamdz.notion.site/Tutorial-Get-Query-ID-f415621d4a9843d2a7a9ad2cfb9abeb4?pvs=74>
-
-
 
 ## Mendapatkan API KEY
 

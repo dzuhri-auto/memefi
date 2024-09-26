@@ -3,6 +3,8 @@ import json
 from datetime import datetime, timedelta, timezone
 from urllib.parse import unquote
 
+import pytz
+
 
 def convert_datetime_str_to_utc(datetime_str):
     decimal_index = datetime_str.find(".")
@@ -21,16 +23,16 @@ def format_duration(seconds):
     minutes, seconds = divmod(remainder, 60)
 
     if days:
-        message = f"{int(days)} hari "
+        message = f"{int(days)} days "
 
     if hours:
-        message = message + f"{int(hours)} jam "
+        message = message + f"{int(hours)} hours "
 
     if minutes:
-        message = message + f"{int(minutes)} menit "
+        message = message + f"{int(minutes)} minute "
 
     if seconds:
-        message = message + f"{int(seconds)} detik"
+        message = message + f"{int(seconds)} seconds"
     return message.strip()
 
 
@@ -139,3 +141,26 @@ def calculate_spin_multiplier(spins):
     idx = bisect.bisect_right(variables, spins) - 1
 
     return variables[idx] if idx >= 0 else 1
+
+def check_complete_task_delay(date_str: str):
+    # from datetime import datetime
+    # import pytz
+
+    # # Input datetime string
+    # date_str = "2024-09-26T03:17:22.450Z"
+
+    # Parse the string into a naive datetime object
+    naive_dt = datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%S.%fZ")
+
+    # Make the datetime timezone-aware in UTC
+    utc_dt = pytz.utc.localize(naive_dt)
+
+    # Get the current time in UTC
+    now_utc = datetime.now(pytz.utc)
+
+    # Calculate the time difference
+    time_difference = utc_dt - now_utc
+
+    # Get the total seconds left
+    seconds_left = time_difference.total_seconds()
+    return seconds_left

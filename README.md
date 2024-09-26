@@ -12,6 +12,7 @@ For README in Bahasa Indonesia: [![en](https://img.shields.io/badge/README-id-re
 - Auto Upgrade Boost
 - Auto Play Slot Machine
 - Auto Use Bot Tap
+- Auto Clear missions 🔥🔥🔥
 
 ## .env Settings
 
@@ -35,6 +36,7 @@ For README in Bahasa Indonesia: [![en](https://img.shields.io/badge/README-id-re
 | USE_PROXY_FROM_FILE  | For using proxy                         | False    |
 | USE_TAP_BOT          | Auto use bot tap (if already buy)       | True     |
 | EMERGENCY_STOP       | Emergency stop                          | False    |
+| AUTO_CLEAR_MISSION   | Auto clear mission                      | True     |
 
 ## Prerequisites
 

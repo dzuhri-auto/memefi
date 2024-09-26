@@ -21,6 +21,8 @@ class Settings(BaseSettings):
 
     APPLY_DAILY_ENERGY: bool = True
     APPLY_DAILY_TURBO: bool = True
+    
+    AUTO_CLEAR_MISSION: bool = True
 
     RANDOM_TAPS_COUNT: list[int] = [15, 75]
     SLEEP_BETWEEN_TAP: list[int] = [15, 60]
