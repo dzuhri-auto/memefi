@@ -1,10 +1,27 @@
 # Memefi AUTO
 
-Memefi Telegram Mini App Bot Auto
+Memefi Telegram Mini App Bot Auto</br>
+*(Requires Only Query ID)*
 
-For README in Bahasa Indonesia: [![en](https://img.shields.io/badge/README-id-red.svg)](https://github.com/dzuhri-auto/memefi/blob/master/README.id.md)
+> [!NOTE]
+> This is a paid script that requires a valid license key to operate. For more information, please visit the [Dzuhri Auto](https://irhamdz.notion.site/Dzuhri-Auto-10f53e55353080f98fbae250bd7172d1) page.
 
-## Feature
+## Supported Operating Systems
+
+- VPS
+- Windows
+- Mac
+- Android (using Termux)
+
+## Prerequisites
+
+Before setting up the bot, ensure the following are installed:
+
+- [Git](https://git-scm.com/downloads)
+
+- [Python](https://www.python.org/downloads/) (version 3.10.0 - 3.11.9)
+
+## Features
 
 - Auto Tap
 - Auto Use Booster
@@ -12,13 +29,16 @@ For README in Bahasa Indonesia: [![en](https://img.shields.io/badge/README-id-re
 - Auto Upgrade Boost
 - Auto Play Slot Machine
 - Auto Use Bot Tap
-- Auto Clear missions 🔥🔥🔥
+- Auto Clear missions 🔥🔥🔥 *(not all missions)*
+- Can be run all days 24/7
 
 ## .env Settings
 
+All the configurations can be set in the .env file.
+
 | Name                 | Description                             | Default  |
 | -------------------- | --------------------------------------- | -------- |
-| API_KEY              | Custom API KEY                          |          |
+| LICENSE_KEY          | Dzuhri Auto License Key                 |          |
 | MIN_AVAILABLE_ENERGY | Minimum energy to tap                   | 100      |
 | SLEEP_BY_MIN_ENERGY  | Delay seconds when reach minimum energy | 1800     |
 | ADD_TAPS_ON_TURBO    | Add more tap point when turbo activated | 2500     |
@@ -37,92 +57,90 @@ For README in Bahasa Indonesia: [![en](https://img.shields.io/badge/README-id-re
 | USE_TAP_BOT          | Auto use bot tap (if already buy)       | True     |
 | EMERGENCY_STOP       | Emergency stop                          | False    |
 | AUTO_CLEAR_MISSION   | Auto clear mission                      | True     |
+| AUTO_SPIN            | Auto Play Slot Machine                  | False    |
 
-## Prerequisites
+## How to obtain and use Query ID
 
-Make sure you already install:
+To get the Query ID, [read this guide.](https://irhamdz.notion.site/Tutorial-Get-Query-ID-f415621d4a9843d2a7a9ad2cfb9abeb4?pvs=74)
 
-- [Python](https://www.python.org/downloads/release/python-31012/) **version 3.10**
+Once you have the Query ID, add it to the `query_ids.txt` file.</br>
+If you're using multiple accounts, simply add each query ID on a new line, like this:
 
-## Obtain Query ID
+```bash
+query_id=xxxxxxxxx-User1
+query_id=xxxxxxxxx-User2
+```
 
-<https://irhamdz.notion.site/Tutorial-Get-Query-ID-f415621d4a9843d2a7a9ad2cfb9abeb4?pvs=74>
+## How to Use Proxy
 
-## Request API KEY
+To use proxy, [read this guide.](https://irhamdz.notion.site/Use-Proxy-11153e553530807aaa14fdfde425723c?pvs=74)
 
-This script use custom API KEY, The API KEY itself is for rent only
+## Installation Guide
 
-you can chat me, [Irham](https://t.me/irhamdz) to ask how much the rent price !
+### Step 1: Clone the Repository to Your PC / VPS
 
-## Install
-
-Clone to your PC / VPS:
+Run the following command to clone the repository:
 
 ```shell
 git clone https://github.com/dzuhri-auto/memefi.git
 ```
 
-Go inside to the folder:
+### Step 2: Navigate to the Project Folder
+
+Once cloned, navigate to the project directory:
 
 ```shell
 cd memefi
 ```
 
-Then use this command for automatic install:
+### Step 3: Install the Dependencies
 
-**Windows** :
+Run the following commands based on your operating system:
 
-```shell
-windows\install.bat
+**Windows (Using Powershell)** :
+
+```powershell
+py -m venv venv
+.\venv\Scripts\Activate
+pip3 install wheel
+pip3 install -r requirements.txt
+cp .env-example .env
 ```
 
-**Mac / Linux / VPS** :
+**Mac / Linux** :
 
 ```shell
-sudo chmod +x ubuntu/install.sh ubuntu/run.sh
+python3 -m venv venv
+source venv/bin/activate
+pip3 install wheel
+pip3 install -r requirements.txt
+cp .env-example .env
 ```
 
-```shell
-source ./ubuntu/install.sh
+***Note : dont forget to edit `.env` file***
+
+## Using the License Key
+
+After installation, you can input your license key in the .env file as follows:
+
+```note
+LICENSE_KEY="Your License Key"
 ```
 
-***note : dont forget to edit file `.env`***
+## Starting the Bot
 
-## Update API KEY
+Run the bot using the following commands, depending on your operating system:
 
-After install we can update using API KEY:
+**Windows (Using Powershell)** :
 
-**Windows** :
-
-```shell
-$filePath = ".env"
-$searchPattern = "^API_KEY="
-$replacement = 'API_KEY="YOUR API KEY"'
-
-(Get-Content $filePath) -replace $searchPattern + '.*', $replacement | Set-Content $filePath
+```powershell
+.\venv\Scripts\Activate
+py main.py
 ```
 
-**Mac / Linux / VPS** :
+**Mac / Linux** :
 
 ```shell
-sed -i~ '/^API_KEY=/s/=.*/="YOUR API KEY"/' .env
-
-# example if your API KEY = "aisjiqiqssq"
-# sed -i~ '/^API_KEY=/s/=.*/="aisjiqiqssq"/' .env
-```
-
-## Start Bot
-
-For run the bot:
-
-**Windows** :
-
-```shell
-windows\run.bat
-```
-
-**Mac / Linux / VPS** :
-
-```shell
-./ubuntu/run.sh
+source venv/bin/activate
+python3 main.py
 ```

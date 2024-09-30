@@ -1,37 +1,38 @@
-from typing import Union
+import os
+from dotenv import load_dotenv
+import json
 
-from pydantic_settings import BaseSettings, SettingsConfigDict
+load_dotenv()
 
 
-class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_ignore_empty=True)
-    API_KEY: str
+class Settings:
+    LICENSE_KEY = os.getenv("LICENSE_KEY")
 
-    MIN_AVAILABLE_ENERGY: int = 100
-    SLEEP_BY_MIN_ENERGY: Union[list[int], int] = [1800, 3600]
+    MIN_AVAILABLE_ENERGY = int(os.getenv("MIN_AVAILABLE_ENERGY", '100'))
+    SLEEP_BY_MIN_ENERGY = json.loads(os.getenv("SLEEP_BY_MIN_ENERGY", '[1800, 3600]'))
 
-    ADD_TAPS_ON_TURBO: int = 2500
+    ADD_TAPS_ON_TURBO = int(os.getenv("ADD_TAPS_ON_TURBO", '2500'))
 
-    AUTO_UPGRADE_TAP: bool = True
-    MAX_TAP_LEVEL: int = 5
-    AUTO_UPGRADE_ENERGY: bool = True
-    MAX_ENERGY_LEVEL: int = 5
-    AUTO_UPGRADE_CHARGE: bool = True
-    MAX_CHARGE_LEVEL: int = 3
+    AUTO_UPGRADE_TAP = os.getenv("AUTO_UPGRADE_TAP", 'True')
+    MAX_TAP_LEVEL = int(os.getenv("MAX_TAP_LEVEL", '5'))
+    AUTO_UPGRADE_ENERGY = os.getenv("AUTO_UPGRADE_ENERGY", 'True')
+    MAX_ENERGY_LEVEL = int(os.getenv("MAX_ENERGY_LEVEL", '5'))
+    AUTO_UPGRADE_CHARGE = os.getenv("AUTO_UPGRADE_CHARGE", 'True')
+    MAX_CHARGE_LEVEL = int(os.getenv("MAX_CHARGE_LEVEL", '3'))
 
-    APPLY_DAILY_ENERGY: bool = True
-    APPLY_DAILY_TURBO: bool = True
-    
-    AUTO_CLEAR_MISSION: bool = True
+    APPLY_DAILY_ENERGY = os.getenv("APPLY_DAILY_ENERGY", 'True')
+    APPLY_DAILY_TURBO = os.getenv("APPLY_DAILY_TURBO", 'True')
 
-    RANDOM_TAPS_COUNT: list[int] = [15, 75]
-    SLEEP_BETWEEN_TAP: list[int] = [15, 60]
-    ACTIVE_TURBO_DELAY: int = 4
+    AUTO_CLEAR_MISSION = os.getenv("AUTO_CLEAR_MISSION", 'True')
+    AUTO_PLAY_SPIN = os.getenv("AUTO_PLAY_SPIN", 'False')
 
-    USE_PROXY_FROM_FILE: bool = False
+    RANDOM_TAPS_COUNT = json.loads(os.getenv("RANDOM_TAPS_COUNT", '[15, 75]'))
+    SLEEP_BETWEEN_TAP = json.loads(os.getenv("SLEEP_BETWEEN_TAP", '[15, 60]'))
+    ACTIVE_TURBO_DELAY = int(os.getenv("ACTIVE_TURBO_DELAY", '4'))
 
-    USE_TAP_BOT: bool = True
-    EMERGENCY_STOP: bool = False
+    USE_PROXY_FROM_FILE = os.getenv("USE_PROXY_FROM_FILE", 'False')
+
+    USE_TAP_BOT = os.getenv("USE_TAP_BOT", 'True')
 
 
 settings = Settings()

@@ -33,3 +33,7 @@ class GameSessionNotFoundException(BaseException):
 
 class ErrorStartGameException(BaseException):
     pass
+
+
+class MissingApiKeyException(BaseException):
+    pass
