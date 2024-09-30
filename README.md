@@ -127,6 +127,8 @@ After installation, you can input your license key in the .env file as follows:
 LICENSE_KEY="Your License Key"
 ```
 
+[Buy the license key](https://irhamdz.notion.site/Dzuhri-Auto-10f53e55353080f98fbae250bd7172d1)
+
 ## Starting the Bot
 
 Run the bot using the following commands, depending on your operating system:
