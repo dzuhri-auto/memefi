@@ -123,13 +123,15 @@ cp .env-example .env
 
 ## Using the License Key
 
-After installation, you can input your license key in the .env file as follows:
+After installation, you need to input your license key in the .env file.
+
+If you don't have a license key yet, you can purchase one here: [Buy the license key](https://irhamdz.notion.site/Dzuhri-Auto-10f53e55353080f98fbae250bd7172d1)
+
+Once you have it, add it to your `.env` file like this:
 
 ```note
 LICENSE_KEY="Your License Key"
 ```
-
-[Buy the license key](https://irhamdz.notion.site/Dzuhri-Auto-10f53e55353080f98fbae250bd7172d1)
 
 ## Starting the Bot
 
