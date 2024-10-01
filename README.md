@@ -75,6 +75,8 @@ query_id=xxxxxxxxx-User2
 
 To use proxy, [read this guide.](https://irhamdz.notion.site/Use-Proxy-11153e553530807aaa14fdfde425723c?pvs=74)
 
+To buy cheap proxy, [buy cheap proxy here](https://proxy-seller.com/?partner=QJGZSHEU86WI9Y)
+
 ## Installation Guide
 
 ### Step 1: Clone the Repository to Your PC / VPS

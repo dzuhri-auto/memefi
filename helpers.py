@@ -142,6 +142,7 @@ def calculate_spin_multiplier(spins):
 
     return variables[idx] if idx >= 0 else 1
 
+
 def check_complete_task_delay(date_str: str):
     # from datetime import datetime
     # import pytz
@@ -164,3 +165,15 @@ def check_complete_task_delay(date_str: str):
     # Get the total seconds left
     seconds_left = time_difference.total_seconds()
     return seconds_left
+
+
+class bcolors:
+    HEADER = "\033[95m"
+    OKBLUE = "\033[94m"
+    OKCYAN = "\033[96m"
+    OKGREEN = "\033[92m"
+    WARNING = "\033[93m"
+    FAIL = "\033[91m"
+    ENDC = "\033[0m"
+    BOLD = "\033[1m"
+    UNDERLINE = "\033[4m"
