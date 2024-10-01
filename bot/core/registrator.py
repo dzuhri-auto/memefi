@@ -6,7 +6,7 @@ async def register_query_id() -> None:
 
     add = True
     while add:
-        query_id_str = input("\nMasukkan query id (press Enter to exit): ")
+        query_id_str = input("\nPlease input query id (press Enter to exit): ")
 
         if not query_id_str:
             break
@@ -30,11 +30,11 @@ async def register_query_id() -> None:
                 if username in set(existing_username):
                     username_exist = True
                 else:
-                    fd.write(f"\n{query_id_str}")
+                    fd.write(f"\n{query_id_str.strip()}")
             else:
                 fd.write(f"{query_id_str.strip()}")
 
         if username_exist:
-            logger.error(f"Akun @{username} sudah terdaftar, tambah akun yg lainnya aja gan !")
+            logger.error(f"Session @{username} already added, please use other account")
         else:
-            logger.success(f"Akun @{username} | {first_name} {last_name} | berhasil ditambahkan !")
+            logger.success(f"Successfully added @{username} | {first_name} {last_name}")
