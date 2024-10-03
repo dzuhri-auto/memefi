@@ -1,0 +1,1 @@
+query_id=AAHTUYcyAwAAANNRhzKGp0I0&user=%7B%22id%22%3A7290180051%2C%22first_name%22%3A%22Dayo%20%24CFI%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22crown_tech01%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D&auth_date=1727944119&hash=5d57502ace4b49d12db4b511dee620ede1a81fe20b267512353ed6d4103b8899
