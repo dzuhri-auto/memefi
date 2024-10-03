@@ -177,3 +177,12 @@ class bcolors:
     ENDC = "\033[0m"
     BOLD = "\033[1m"
     UNDERLINE = "\033[4m"
+
+
+def format_large_number(number):
+    if number >= 1_000_000_000:  # Check if the number is in billions
+        return f"{number / 1_000_000_000:.2f}B"
+    elif number >= 1_000_000:  # Check if the number is in millions
+        return f"{number / 1_000_000:.2f}M"
+    else:
+        return str(number)
