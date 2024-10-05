@@ -14,9 +14,9 @@ class Settings:
     ADD_TAPS_ON_TURBO = json.loads(os.getenv("ADD_TAPS_ON_TURBO", '[50000, 100000]'))
 
     AUTO_UPGRADE_TAP = os.getenv("AUTO_UPGRADE_TAP", 'True')
-    MAX_TAP_LEVEL = int(os.getenv("MAX_TAP_LEVEL", '5'))
+    MAX_TAP_LEVEL = int(os.getenv("MAX_TAP_LEVEL", '10'))
     AUTO_UPGRADE_ENERGY = os.getenv("AUTO_UPGRADE_ENERGY", 'True')
-    MAX_ENERGY_LEVEL = int(os.getenv("MAX_ENERGY_LEVEL", '5'))
+    MAX_ENERGY_LEVEL = int(os.getenv("MAX_ENERGY_LEVEL", '10'))
     AUTO_UPGRADE_CHARGE = os.getenv("AUTO_UPGRADE_CHARGE", 'True')
     MAX_CHARGE_LEVEL = int(os.getenv("MAX_CHARGE_LEVEL", '3'))
 
